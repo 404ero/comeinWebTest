@@ -5,8 +5,5 @@
 	  <classes>
 	     <class name="com.cn.comein.TestCase.Login"/>
 	  </classes>
-	  <classes>
-	     <class name="com.cn.comein.TestCase.PurchaseCourseTest"/>
-	  </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
