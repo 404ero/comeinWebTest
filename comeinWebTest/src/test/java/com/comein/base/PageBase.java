@@ -1,5 +1,6 @@
 package com.comein.base;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -9,8 +10,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
 import com.comein.base.DriverBase;
-import com.comein.utils.ConfigurationUtil;
-
 /** 
  * @ClassName: PageBase
  * @description: 
@@ -25,8 +24,7 @@ public class PageBase {
 	    this.driverBase = driverBase;
         }
 	    public static By getByElement(String pe){
-			ConfigurationUtil cu = new ConfigurationUtil();
-			List<String> value = cu.Configuration(pe,">");
+			List<String> value = Configuration(pe,">");
 			String localType = value.get(0);
 			String localvalue = value.get(1);
 			if(localType.equals("id")){
@@ -39,6 +37,8 @@ public class PageBase {
 				return By.xpath(localvalue);
 			}else if(localType.equals("linkText")){
 				return By.linkText(localvalue);
+			}else if(localType.equals("partialLinkText")){
+				return By.partialLinkText(localvalue);
 			}else if(localType.equals("tagName")){
 				return By.tagName(localvalue);
 			}else{
@@ -49,6 +49,22 @@ public class PageBase {
 		public WebElement getWebElement(By by){
 			WebElement element = driverBase.getDriver().findElement(by);
 			return element;
+		}
+		//将类似name>btn这样的元素形式，拆分开来
+		public static List<String> Configuration(String pe,String splitType){
+			List<String> list=new ArrayList<String>();
+			if(splitType.isEmpty()){
+				list.add(pe);
+				return list;
+			}else{
+				String localType = pe.split(splitType)[0];
+				System.out.println(localType);
+				String localvalue = pe.split(splitType)[1];
+				System.out.println(localvalue);
+				list.add(localType);
+				list.add(localvalue);
+				return list;
+			}
 		}
 	    //判断元素是否存在于页面
 	    public  boolean isElementExist(String key, int timeoutSeconds) {
@@ -66,10 +82,8 @@ public class PageBase {
 	    //根据指定文件获取文件上的信息
 	    public String getInfoByUtil(String key){
 	    	configurationUrl = "src/test/resources/elements.properties";
-	    	ConfigurationUtil cul = new ConfigurationUtil();
-	    	List<String> list  = cul.Configuration(key,"");
+	    	List<String> list  = Configuration(key,"");
 			return list.get(0);
-	    	
 	    }
 	    
 		//封装点击事件
@@ -77,7 +91,7 @@ public class PageBase {
 			if(!element.equals(null)){
 				element.click();
 			}else{
-				System.out.println("�޷����е������!");
+				System.out.println("无法点击该元素！");
 			}
 		}
 		//封装添加值的方法
@@ -85,7 +99,7 @@ public class PageBase {
 			if(!element.equals(null)){
 				element.sendKeys(value);;
 			}else{
-				System.out.println(element+":Ԫ���޷������������!");
+				System.out.println(element+":无法添加该元素!");
 			}
 		}
 		//封装isDisplayed()

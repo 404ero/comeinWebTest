@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Suite" parallel="false">
-  <test name="Test">
+  <test name="LoginTest">
     <classes>
       <class name="com.comein.testCase.Login"/>
     </classes>
-  </test> <!-- Test -->
+  </test>
+  <test name="UserInfoTest">
+    <classes>
+      <class name="com.comein.testCase.UserInfo"/>
+    </classes>
+  </test> 
 </suite> <!-- Suite -->

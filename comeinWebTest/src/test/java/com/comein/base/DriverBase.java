@@ -10,7 +10,7 @@ import org.openqa.selenium.WebElement;
 
 /** 
  * @ClassName: DriverBase
- * @description: 封装Driver
+ * @description: 封装Driver方法类
  * @author: your name
  * @Date: 2019年4月18日 上午10:57:43
  */
@@ -27,6 +27,7 @@ public class DriverBase {
 	 *  打开url
 	 */
 	public void get(String url){
+		driver.manage().window().maximize(); 
 		driver.get(url);
 	}
 	
@@ -105,6 +106,7 @@ public class DriverBase {
 	 *  添加Cookie
 	 */
 	public void setCookie(Cookie cookie){
+		System.out.println(driver);
 		driver.manage().addCookie(cookie);
 	}
 	/**

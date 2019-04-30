@@ -15,7 +15,7 @@ public class ProUtil {
 	private Properties prop;
 	private String filePath;
 	/**
-	 * 读取文件工具类
+	 * 读取文件工具类（暂没有用到）
 	 */
 	public ProUtil(String filePath) {
 		this.filePath = filePath;

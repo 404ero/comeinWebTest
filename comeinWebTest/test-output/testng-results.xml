@@ -1,17 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="12381" started-at="2019-04-23T13:23:29Z" finished-at="2019-04-23T13:23:42Z">
+  <suite name="Suite" duration-ms="27647" started-at="2019-04-30T06:33:09Z" finished-at="2019-04-30T06:33:36Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="12381" started-at="2019-04-23T13:23:29Z" finished-at="2019-04-23T13:23:42Z">
+    <test name="LoginTest" duration-ms="22962" started-at="2019-04-30T06:33:09Z" finished-at="2019-04-30T06:33:32Z">
       <class name="com.comein.testCase.Login">
-        <test-method status="PASS" signature="test()[pri:0, instance:com.comein.testCase.Login@4d1bf319]" name="test" duration-ms="12361" started-at="2019-04-23T21:23:29Z" finished-at="2019-04-23T21:23:42Z">
+        <test-method status="PASS" signature="test()[pri:0, instance:com.comein.testCase.Login@5c80cf32]" name="test" duration-ms="22905" started-at="2019-04-30T14:33:09Z" finished-at="2019-04-30T14:33:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test -->
       </class> <!-- com.comein.testCase.Login -->
-    </test> <!-- Test -->
+    </test> <!-- LoginTest -->
+    <test name="UserInfoTest" duration-ms="4614" started-at="2019-04-30T06:33:32Z" finished-at="2019-04-30T06:33:36Z">
+      <class name="com.comein.testCase.UserInfo">
+        <test-method status="PASS" signature="test()[pri:0, instance:com.comein.testCase.UserInfo@48e1f6c7]" name="test" duration-ms="4613" started-at="2019-04-30T14:33:32Z" finished-at="2019-04-30T14:33:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test -->
+      </class> <!-- com.comein.testCase.UserInfo -->
+    </test> <!-- UserInfoTest -->
   </suite> <!-- Suite -->
 </testng-results>

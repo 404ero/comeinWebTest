@@ -1,14 +1,13 @@
 eclipse.preferences.version=1
 encoding//src/test/java/com/comein/base/CommonEngine.java=UTF-8
 encoding//src/test/java/com/comein/base/DriverBase.java=UTF-8
-encoding//src/test/java/com/comein/base/LoginContant.java=UTF-8
+encoding//src/test/java/com/comein/base/ExcelContant.java=UTF-8
 encoding//src/test/java/com/comein/base/LoginKeyword.java=UTF-8
 encoding//src/test/java/com/comein/base/PageBase.java=UTF-8
 encoding//src/test/java/com/comein/base/SelectDriver.java=UTF-8
 encoding//src/test/java/com/comein/testCase/Login.java=UTF-8
 encoding//src/test/java/com/comein/testCase/MySutieMain.java=UTF-8
 encoding//src/test/java/com/comein/testCase/NewTest.java=UTF-8
-encoding//src/test/java/com/comein/utils/ConfigurationUtil.java=UTF-8
 encoding//src/test/java/com/comein/utils/CookieUtil.java=UTF-8
 encoding//src/test/java/com/comein/utils/DataStore.java=UTF-8
 encoding//src/test/java/com/comein/utils/ExcelUtil.java=UTF-8

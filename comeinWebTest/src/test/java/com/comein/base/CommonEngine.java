@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 
 /** 
  * @ClassName: CommonEngine
- * @description: 
+ * @description: 根据反射机制获取关键字类中方法的类
  * @author: your name
  * @Date: 2019年4月22日 下午5:20:54
  */

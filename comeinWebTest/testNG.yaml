@@ -1,6 +1,0 @@
-name: Suite
-tests:
-  - name: Test
-    classes:
-      - com.comein.testCase.Login
-

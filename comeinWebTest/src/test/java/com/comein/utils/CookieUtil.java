@@ -15,16 +15,14 @@ import com.comein.base.DriverBase;
 
 public class CookieUtil {
 	public DriverBase driverBase;
-	public ProUtil pro;
 	
 	public CookieUtil(DriverBase driverBase) {
 		this.driverBase = driverBase;
-		pro = new ProUtil("cookie.properties");
 	}
-	
 	public void setCookie(){
-		String value = pro.getPro("apsid");
-		Cookie cookie = new Cookie("apsid",value,"imooc.com","/",null);
+		String value = PropertiesFile.read("JSESSIONID");
+		Cookie cookie = new Cookie("JSESSIONID",value,"testserver.comein.cn","/ComeinManager",null);
+		System.out.println(driverBase.getDriver());
 		driverBase.setCookie(cookie);
 	}
 	//获取cookie
@@ -32,7 +30,7 @@ public class CookieUtil {
 		Set<Cookie> cookies = driverBase.getCookie();
 		for(Cookie cookie:cookies){
 			if(cookie.getName().equals("apsid")){
-				pro.writePro(cookie.getName(), cookie.getValue());
+				PropertiesFile.writePro(cookie.getName(), cookie.getValue());
 			}
 		}
 	}

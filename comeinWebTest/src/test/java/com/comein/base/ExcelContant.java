@@ -2,21 +2,20 @@ package com.comein.base;
  
 /** 
  * @ClassName: LoginContant
- * @description: 
+ * @description: 配置Excel文件中的参数类
  * @author: your name
  * @Date: 2019年4月22日 下午5:15:14
  */
 
-public class LoginContant {
-	    // 登录URL
-	public static final String loginUrl = "https://www.imooc.com/";
-		// 读取文件的文件夹路径
+public class ExcelContant {
+	     // 读取文件的文件夹路径
 	public static final String TextPath = "C:/Users/Administrator/desktop/";
 		// 读取的文件名
 	public static final String fileName = "pageElements.xls";
-		// 读取的文件的sheet
-	public static final String suiteSheet = "Suite";
-	public static final String caseSheet = "login";
+		// 读取的文件的底部sheet的值
+	public static final Integer suiteSheet = 0;
+	public static final Integer loginSheet = 1;
+	public static final Integer userInfoSheet = 2;
 		// 用例执行的结果定义
 	public static final String pass = "PASS";
 	public static final String fail = "FAIL";

@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
-  <test name="Test">
+  <test name="LoginTest">
     <classes>
       <class name="com.comein.testCase.Login"/>
     </classes>
-  </test> <!-- Test -->
+  </test> <!-- LoginTest -->
+  <test name="UserInfoTest">
+    <classes>
+      <class name="com.comein.testCase.UserInfo"/>
+    </classes>
+  </test> <!-- UserInfoTest -->
 </suite> <!-- Failed suite [Suite] -->

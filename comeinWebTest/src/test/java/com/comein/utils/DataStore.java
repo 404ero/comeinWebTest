@@ -14,7 +14,8 @@ public class DataStore {
 		public static String key = PropertiesFile.read("key");
 		public static String startExplore = PropertiesFile.read("startExplore");
 		public static String logUrl = PropertiesFile.read("log4jUrl");
-		public static String configFileUrl = PropertiesFile.read("configFileUrl");
+		public static String postParam = PropertiesFile.read("postParam");
+		public static String loginRequestUrl = PropertiesFile.read("loginRequestUrl");
 		public static void main(String[] args) {
 			System.out.println(driverurl);
 			System.out.println(startExplore);

@@ -2,27 +2,31 @@ package com.comein.base;
 
 import org.openqa.selenium.WebElement;
 
-import com.comein.base.DriverBase;
+import com.comein.utils.Base64ToStringUtil;
 import com.comein.utils.Log;
 import com.comein.utils.ReadExcel;
 
 /** 
- * @ClassName: LoginKeyword
+ * @ClassName: UserInfoKeyword
  * @description: 
  * @author: your name
- * @Date: 2019年4月22日 下午4:53:06
+ * @Date: 2019年4月28日 下午11:00:35
  */
 
-public class LoginKeyword extends PageBase{
-	public LoginKeyword(DriverBase driverBase) {
+public class UserInfoKeyword extends PageBase{
+	public UserInfoKeyword(DriverBase driverBase) {
 		super(driverBase);
 	}
 	/**
 	 *  打开浏览器输入网址
 	 */
-	public  void OpenBrowserSetUrl(String url) {
+	public  void OpenBrowserSetUrl(String pe,String url) {
 		try {
+			if("已登录".equals(pe)){
+				Base64ToStringUtil.Base64toLogined(driverBase);
+			}
 			Log.info("正在打开网址： "+ url);
+			//跳转至URL
 			driverBase.get(url);
 		} catch (Exception e) {
 			Log.error("无法打开当前网址----- " + e.getMessage());
@@ -84,4 +88,5 @@ public class LoginKeyword extends PageBase{
 			ReadExcel.result = false;
 		}
 	}
+
 }

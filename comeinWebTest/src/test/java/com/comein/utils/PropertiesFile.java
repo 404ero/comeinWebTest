@@ -14,8 +14,9 @@ import java.util.Properties;
  */
 
 public class PropertiesFile {
+	private static Properties pps;
 	public static String read(String key) {
-		Properties pps = new Properties();
+		pps = new Properties();
 		InputStream in = null;
 		String configFileUrl = "src/test/resourse/Config.properties";
 		try {
@@ -34,6 +35,10 @@ public class PropertiesFile {
 			e.printStackTrace();
 			return null;
 		}	
+	}
+	public static void writePro(String key,String value){
+		pps = new Properties();
+		pps.setProperty(key, value);
 	}
 	@SuppressWarnings("static-access")
 	public static void main(String[] args) {

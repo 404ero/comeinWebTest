@@ -51,8 +51,8 @@ public class ExcelUtil {
 	 * @param sheetName sheet名
 	 * @return
 	 */
-	public static String getCellData(int rownum,int cellnum,String sheetName) {
-		excelSheet = excelBook.getSheet(sheetName);
+	public static String getCellData(int rownum,int cellnum,int sheetNum) {
+		excelSheet = excelBook.getSheetAt(sheetNum);
 		cell = excelSheet.getRow(rownum).getCell(cellnum);
 		String cellData = getCellValue(cell);
 		return cellData;
@@ -60,6 +60,9 @@ public class ExcelUtil {
 	//单元格内容类型转换为字符串
 	public static String getCellValue(Cell cell) {
         String cellValue = "";
+        if(cell == null){
+        	return cellValue;
+        }else{
         // 以下是判断数据的类型
         switch (cell.getCellTypeEnum()) {
             case NUMERIC: // 数字
@@ -91,6 +94,7 @@ public class ExcelUtil {
                 break;
         }
         return cellValue;
+      }
     }
 	
 	/**
@@ -101,9 +105,9 @@ public class ExcelUtil {
 	 * @param path excel文件路径
 	 * @param sheetName sheet名
 	 */
-	public static void setCellData(String result,int rownum,int cellnum,String path,String sheetName) {
+	public static void setCellData(String result,int rownum,int cellnum,String path,int sheetNum) {
 		try {
-			excelSheet = excelBook.getSheet(sheetName);
+			excelSheet = excelBook.getSheetAt(sheetNum);
 			row = excelSheet.getRow(rownum);
 			cell = row.getCell(cellnum);
 			if (cell == null) {
@@ -122,21 +126,52 @@ public class ExcelUtil {
 		}
 		
 	}
-	
+	/**
+	 * 获取excel的sheet的第一行
+	 * @param sheetName
+	 * @return
+	 */
+	public static int getFirstRownum(int sheetNum) {
+		int row = 0;
+		try {
+			excelSheet = excelBook.getSheetAt(sheetNum);
+			row = excelSheet.getFirstRowNum();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return row;
+	}
 	/**
 	 * 获取excel的sheet的最后一行
 	 * @param sheetName
 	 * @return
 	 */
-	public static int getLastRownum(String sheetName) {
+	public static int getLastRownum(int sheetNum) {
 		int row = 0;
 		try {
-			excelSheet = excelBook.getSheet(sheetName);
+			excelSheet = excelBook.getSheetAt(sheetNum);
 			row = excelSheet.getLastRowNum();
 		} catch (Exception ex) {
 			ex.printStackTrace();
 		}
 		return row;
 	}
+	
+	/**
+	 * 获取excel的sheet的最后一行
+	 * @param sheetName
+	 * @return
+	 */
+	public static int getPhysicalNumberOfRows(int sheetNum) {
+		int row = 0;
+		try {
+			excelSheet = excelBook.getSheetAt(sheetNum);
+			row = excelSheet.getPhysicalNumberOfRows();
+		} catch (Exception ex) {
+			ex.printStackTrace();
+		}
+		return row;
+	}
+	
 
 }
